@@ -11,6 +11,9 @@
       <img [src]="busqueda.img" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">{{busqueda.name}}</h5>
+        <a href="{{busqueda.url}}">ver en Spotify</a>
       </div>
     </div>
 </div>
+
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>

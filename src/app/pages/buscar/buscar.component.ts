@@ -10,6 +10,7 @@ import { SpotifyAppService } from '../../services/spotify-app.service'
 export class BuscarComponent implements OnInit {
 
   busquedas: any;
+  public loading = false;
 
   constructor(private spotifyAppService: SpotifyAppService) { }
 
@@ -18,9 +19,17 @@ export class BuscarComponent implements OnInit {
 
 
 
-  busqueda = async(termino: string)=>{
-    let resp: any = await this.spotifyAppService.cargarBusqueda(termino);
-    this.busquedas = resp.respuesta
+  busqueda = async (termino: string) => {
+    try {
+      this.loading = true;
+      let resp: any = await this.spotifyAppService.cargarBusqueda(termino);
+      this.loading = false;
+      this.busquedas = resp.respuesta
+    } catch (err) {
+      this.loading = false;
+      console.log(err)
+    }
+
   }
 
 
