@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './pages/shared/navbar/navbar.component';
 import { ArtistaComponent } from './pages/artista/artista.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { PieComponent } from './pages/shared/pie/pie.component';
 
 
 export function apiConfigSwagger(): Configuration{
@@ -26,7 +27,8 @@ export function apiConfigSwagger(): Configuration{
     BuscarComponent,
     HomeComponent,
     NavbarComponent,
-    ArtistaComponent
+    ArtistaComponent,
+    PieComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyAppService } from '../../services/spotify-app.service'
 
+
 @Component({
   selector: 'app-buscar',
   templateUrl: './buscar.component.html',
@@ -13,10 +14,14 @@ export class BuscarComponent implements OnInit {
   constructor(private spotifyAppService: SpotifyAppService) { }
 
   async ngOnInit() {
-    let resp: any = await this.spotifyAppService.cargarBusqueda();
-    this.busquedas = resp.respuesta
-
-    console.log(resp)
   }
+
+
+
+  busqueda = async(termino: string)=>{
+    let resp: any = await this.spotifyAppService.cargarBusqueda(termino);
+    this.busquedas = resp.respuesta
+  }
+
 
 }
