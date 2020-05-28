@@ -1,4 +1,9 @@
-# NectiaApp
+# FrontNectia
+front
+- Generar un Single Page Application (SPA) en Angular, Vue, React, etc. (no jQuery).
+- Generar un formulario de búsqueda.
+- Consumir el API de búsqueda del backend mostrar los resultados en una lista.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
