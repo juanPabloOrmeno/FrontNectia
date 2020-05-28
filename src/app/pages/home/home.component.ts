@@ -8,13 +8,15 @@ import { SpotifyAppService } from '../../services/spotify-app.service'
 })
 export class HomeComponent implements OnInit {
 
+  nuevos: any;
+
   constructor(private spotifyAppService: SpotifyAppService) { }
 
   async ngOnInit() {
 
 
     let resp: any = await this.spotifyAppService.cargasNuevos();
-
+    this.nuevos = resp.respuesta
 
     console.log(resp)
   }
