@@ -63,10 +63,10 @@ export class SpotifyService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public buscarGet(buscar?: string, observe?: 'body', reportProgress?: boolean): Observable<ResponseBuscar>;
-    public buscarGet(buscar?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ResponseBuscar>>;
-    public buscarGet(buscar?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ResponseBuscar>>;
-    public buscarGet(buscar?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public spotifyBuscarGet(buscar?: string, observe?: 'body', reportProgress?: boolean): Observable<ResponseBuscar>;
+    public spotifyBuscarGet(buscar?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ResponseBuscar>>;
+    public spotifyBuscarGet(buscar?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ResponseBuscar>>;
+    public spotifyBuscarGet(buscar?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
 
         let queryParameters = new HttpParams({encoder: new CustomHttpUrlEncodingCodec()});
@@ -89,7 +89,7 @@ export class SpotifyService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.request<ResponseBuscar>('get',`${this.basePath}/buscar`,
+        return this.httpClient.request<ResponseBuscar>('get',`${this.basePath}/spotify/buscar`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,
@@ -106,10 +106,10 @@ export class SpotifyService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public nuevoGet(observe?: 'body', reportProgress?: boolean): Observable<ResponseNuevo>;
-    public nuevoGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ResponseNuevo>>;
-    public nuevoGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ResponseNuevo>>;
-    public nuevoGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public spotifyNuevoGet(observe?: 'body', reportProgress?: boolean): Observable<ResponseNuevo>;
+    public spotifyNuevoGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<ResponseNuevo>>;
+    public spotifyNuevoGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<ResponseNuevo>>;
+    public spotifyNuevoGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
@@ -126,7 +126,7 @@ export class SpotifyService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.request<ResponseNuevo>('get',`${this.basePath}/nuevo`,
+        return this.httpClient.request<ResponseNuevo>('get',`${this.basePath}/spotify/nuevo`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,

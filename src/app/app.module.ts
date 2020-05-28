@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 
 import { ApiModule, Configuration, ConfigurationParameters} from '../api';
 import { BuscarComponent } from './pages/buscar/buscar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './pages/shared/navbar/navbar.component';
+import { ArtistaComponent } from './pages/artista/artista.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 export function apiConfigSwagger(): Configuration{
@@ -19,11 +23,16 @@ export function apiConfigSwagger(): Configuration{
 @NgModule({
   declarations: [
     AppComponent,
-    BuscarComponent
+    BuscarComponent,
+    HomeComponent,
+    NavbarComponent,
+    ArtistaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ApiModule.forRoot(apiConfigSwagger),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

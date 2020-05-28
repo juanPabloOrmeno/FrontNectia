@@ -9,14 +9,14 @@ export class SpotifyAppService {
   constructor(private spotifyService : SpotifyService) { }
 
 
-  async cargarUsuarios(){
-    let nuevos = await this.spotifyService.nuevoGet().toPromise();
+  async cargasNuevos(){
+    let nuevos = await this.spotifyService.spotifyNuevoGet().toPromise()
     return nuevos
   }
 
 
   async cargarBusqueda(){
-    let busqueda = await this.spotifyService.buscarGet().toPromise();
+    let busqueda = await this.spotifyService.spotifyBuscarGet().toPromise();
     return busqueda
   }
 
